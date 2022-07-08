@@ -14,11 +14,10 @@ app.set('port', process.env.PORT || 3000);
 
 let options = 
 {
-	host: 'localhost',
-	port: 3306,
-	user: 'user',
-	password: 'password',
-	database: 'pitter',
+	host: 'bbrchz1ppsdnirgwxah8-mysql.services.clever-cloud.com',
+	user: 'uct50hrdlx5xb3nv',
+	password: 'majPlFfJZPfu99yzcSUG',
+	database: 'bbrchz1ppsdnirgwxah8',
     charset: 'utf8mb4_unicode_ci'
 };
 
