@@ -1,8 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import Sign from './Sign';
 
-const root = ReactDOM.createRoot(document.getElementById("app"));
+let app = document.getElementById("app");
+let sign = document.getElementById("sign");
 
-root.render(<App/>);
+if (app)
+{
+    const root = ReactDOM.createRoot(app);
+    root.render(<App/>);
+}
+else if (sign)
+{
+    const root = ReactDOM.createRoot(sign);
+    root.render(<Sign/>);
+}
 
