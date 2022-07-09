@@ -42,7 +42,6 @@ app.use(sessionMW);
 let wrap = middleware => (socket, next) => middleware(socket.request, {}, next);
 
 // Database Connection
-
 function query(query) 
 {
     const con = mysql.createConnection(options);
@@ -64,7 +63,13 @@ app.get('/', (req, res) =>
     console.log(req.session.id_user);
     console.log(req.session.name);
     console.log(req.session.user_name);
-    res.sendFile(__dirname + '/public/index.html');
+    if (req.session.id_user > 0) res.sendFile(__dirname + '/public/index.html');
+    else res.sendFile(__dirname + '/public/login.html');
+});
+
+app.get('/:url.html', (req, res) =>
+{
+    res.redirect('/');
 });
 
 app.post('/signIn', async (req, res) =>
@@ -203,4 +208,5 @@ io.on('connection', async (socket) =>
         {
             await query(`DELETE FROM sockets WHERE user_name = '${socket.request.session.user_name}'`);
         })
-    });
+    }
+);
