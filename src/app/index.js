@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import Sign from './Sign';
+import App from './components/App.jsx';
+import Sign from './components/Sign.jsx';
 
 let app = document.getElementById("app");
 let sign = document.getElementById("sign");
