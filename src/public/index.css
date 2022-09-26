@@ -89,6 +89,10 @@ html, body
 .contact-user, .contact-name
 {
     margin: 0 0 0 1vw;
+    white-space: nowrap;
+    width: calc(100% - 1vw);
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .contact-data p
@@ -473,5 +477,6 @@ html, body
   .contact-container
   {
     font-size: 2vh;
+    max-width: calc(2/3 * 100vw/3);
   }
 }
