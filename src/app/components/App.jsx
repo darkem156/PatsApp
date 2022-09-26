@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Contact from './components/Contact';
-import Chat from './components/Chat';
-import Search from './components/Search';
+import Contact from './Contact.jsx';
+import Chat from './Chat.jsx';
+import Search from './Search.jsx';
 
 const socket = io();
 
