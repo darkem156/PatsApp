@@ -4,22 +4,23 @@ const session = require('express-session');
 const MySQLDB = require('express-mysql-session');
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
+require('dotenv').config();
 
 let regExpEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
 
 const app = express();
-
+console.log(process.env.test)
 // Settings
 app.set('port', process.env.PORT || 3000);
 
 let options = 
 {
-	host: 'localhost',
+	host: process.env.DB_HOST || 'localhost',
 	port: 3306,
-	user: 'user',
-	password: 'password',
-	database: 'pitter',
-    charset: 'utf8mb4_unicode_ci'
+	user: process.env.DB_USER || 'user',
+	password: process.env.DB_PASSWORD || 'password',
+	database: process.env.DB_DATABASE || 'pitter',
+  charset: 'utf8mb4_unicode_ci'
 };
 
 // Sessions
@@ -28,7 +29,7 @@ let sessionStore = new MySQLDB(options);
 const sessionMW = session(
     {
         key: 'cookie-session',
-        secret: 'xdjwmknchewcimkchvjmKFBV1oejucjbhi32ubufo3w1b',
+        secret: process.env.COOKIE_SECRET || 'secret',
         store: sessionStore,
         resave: false,
         saveUninitialized: false
