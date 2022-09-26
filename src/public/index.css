@@ -469,4 +469,9 @@ html, body
     right: 27vw;
     left: inherit;
   }
+
+  .contact-container
+  {
+    font-size: 2vh;
+  }
 }
