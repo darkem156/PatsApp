@@ -29,6 +29,9 @@ html, body
 {
     text-align: center;
     background-color: #0401AF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 #user-name
@@ -337,9 +340,16 @@ html, body
 #sign-container
 {
     background-color: #8FBCFF;
-    margin: 9vh 20vw;
+    margin: 9vh 30vw;
     text-align: center;
     padding: 1vh;
+}
+
+#form-sign-in
+{
+  display: flex;
+  flex-direction: column;
+  margin: 0 3vw;
 }
 
 .button-sign
@@ -366,11 +376,97 @@ html, body
     text-align: center;
     border: none;
     border-radius: 8px;
-    margin: 3vh 2vw;
-    padding: 0 7vw;
+    margin: 3vh 0;
 }
 
 .text-sign::placeholder
 {
     text-align: center;
+}
+
+@media screen and (max-width: 475px)
+{
+  .title
+  {
+    font-size: 12vh;
+  }
+
+  #sign-container
+  {
+    margin: 9vh 20vw;
+  }
+}
+
+@media screen and (max-width: 565px)
+{
+  .app-container
+  {
+    grid-template-columns: none;
+    grid-template-rows: 20% 80%;
+  }
+
+  .user-chats-container
+  {
+    height: 100%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: none;
+    border: none;
+  }
+
+  .chats
+  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    height: auto;
+  }
+
+  .chats-container
+  {
+    grid-template-rows: none;
+  }
+
+  .contact-container
+  {
+    margin: 0 1vw 0 1vw;
+  }
+
+  .chat
+  {
+    height: 100%;
+    max-height: calc(100vh - 32.375vh);
+  }
+
+  #chat-msg-container
+  {
+    height: 100%;
+  }
+
+  #search
+  {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #search-input
+  {
+    max-width: 80%;
+    width: 90%;
+  }
+
+  .contact-data p
+  {
+    font-size: 3vh;
+  }
+
+  .msg-text
+  {
+    font-size: 3vh;
+  }
+
+  #results-container
+  {
+    right: 27vw;
+    left: inherit;
+  }
 }

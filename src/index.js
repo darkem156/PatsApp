@@ -9,7 +9,6 @@ require('dotenv').config();
 let regExpEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
 
 const app = express();
-console.log(process.env.test)
 // Settings
 app.set('port', process.env.PORT || 3000);
 
@@ -17,7 +16,7 @@ let options =
 {
 	host: process.env.DB_HOST || 'localhost',
 	port: 3306,
-	user: process.env.DB_USER || 'user',
+	user: process.env.DB_USER || 'root',
 	password: process.env.DB_PASSWORD || 'password',
 	database: process.env.DB_DATABASE || 'pitter',
   charset: 'utf8mb4_unicode_ci'
